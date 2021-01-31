@@ -30,7 +30,7 @@ document.write(`<br> Área: ${rectangulo1.area()}`);
 document.write(`<br> Perímetro: ${rectangulo1.perimeter()}`);
 
 rectangulo1.modifyHeight = 8;
-document.write(`<br> Áreaaa: ${rectangulo1.area()}`);
-document.write(`<br> Perímeeeetro: ${rectangulo1.perimeter()}`);
-document.write('<br> Anchoaa: ' + rectangulo1.showWidth);
-document.write('<br> Alturaaa: ' + rectangulo1.showHeight);
+document.write(`<br> Área: ${rectangulo1.area()}`);
+document.write(`<br> Perímetro: ${rectangulo1.perimeter()}`);
+document.write('<br> Ancho: ' + rectangulo1.showWidth);
+document.write('<br> Altura: ' + rectangulo1.showHeight);
