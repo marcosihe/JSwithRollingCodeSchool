@@ -1,7 +1,7 @@
 class BankAccount {
-    constructor(accountHolder, balance = 0){
+    constructor(accountHolder){
         this.accountHolder = accountHolder;
-        this.balance = balance;
+        this.balance = 0;
     }
     get showAccountHolder(){
         return this.accountHolder;
