@@ -48,11 +48,10 @@ do {
     6. ¿Agenda llena?
     7. Espacio para nuevo contacto`));
 } while ((menuVariable < 0 || menuVariable > 7) || confirm(`¿Continuar ingresando opciones?`));
-alert(`opcion elegida: ${menuVariable}`);
+
 //función agregar contacto
 let addContactFunction = (newContact) => {
     if (amountOfContacts < newContact.showSize) {
-        alert(`cantidad de contactos = ${amountOfContacts}`);
         let name = prompt('Ingrese nombre').toLowerCase().trim()
         let phoneNumber = parseInt(prompt('Ingrese el número'));            newContact.addContact(arrayContactList, name, phoneNumber);
         amountOfContacts++;
