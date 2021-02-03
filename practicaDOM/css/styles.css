@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Orbitron&display=swap');
+
+
+body {
+    background: #000;
+}
+
+main {
+    min-height: 100vh;
+}
+.dateTitle {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.hourTitle {
+    font-family: 'Londrina Outline', cursive;
+    color: #ffffff;
+    font-size: 4em;
+
+}
+
+.green {
+    text-shadow: 0 0 5px #7bffce,
+    0 0 10px #7bffce,
+    0 0 15px #7bffce,
+    0 0 40px #7bffce,
+    0 0 80px #7bffce,
+    0 0 90px #7bffce,
+    0 0 1000px #7bffce;
+}
+
+.pink {
+    text-shadow: 0 0 5px #ff7bac,
+    0 0 10px #ff7bac,
+    0 0 15px #ff7bac,
+    0 0 40px #ff7bac,
+    0 0 80px #ff7bac,
+    0 0 90px #ff7bac,
+    0 0 1000px #ff7bac;
+}
+
+.blue {
+    text-shadow: 0 0 5px #7bacff,
+    0 0 10px #7bacff,
+    0 0 15px #7bacff,
+    0 0 40px #7bacff,
+    0 0 80px #7bacff,
+    0 0 90px #7bacff,
+    0 0 1000px #7bacff;
+}
+/*Estilos para los botones*/
+.clock-button {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.btn-green {
+    background: #7bffce;
+}
+
+.btn-pink {
+    background: #ff7bac;
+}
+
+.btn-blue {
+    background: #7bacff;
+}
