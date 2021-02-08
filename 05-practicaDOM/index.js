@@ -1,9 +1,9 @@
 let getTime = () => {
     //Obtener la fecha actual (creando un objeto de tipo date)
-    let currentlyDate = new Date(),
-        hours = currentlyDate.getHours(),
-        minutes = currentlyDate.getMinutes(),
-        seconds = currentlyDate.getSeconds();
+    let currentDate = new Date(),
+        hours = currentDate.getHours(),
+        minutes = currentDate.getMinutes(),
+        seconds = currentDate.getSeconds();
 
     //Ahora debo traer los elementos html necesarios
     let paragraphHours = document.querySelector('#hours'),
@@ -16,12 +16,12 @@ let getTime = () => {
 
     //ASignar los valores necesarios
     let week = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-        months = ['enero', 'febrer0', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+        months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
     
-    paragraphDayWeek.innerHTML = week[currentlyDate.getDay()];
-    paragraphNumberDay.innerHTML = currentlyDate.getDate();
+    paragraphDayWeek.innerHTML = week[currentDate.getDay()];
+    paragraphNumberDay.innerHTML = currentDate.getDate();
     paragraphMonth.innerHTML = months[currentlyDate.getMonth()];
-    paragraphYear.innerHTML = currentlyDate.getFullYear();
+    paragraphYear.innerHTML = currentDate.getFullYear();
 
     //Asigno los valores para la hora
     if (hours < 10) {
@@ -57,7 +57,7 @@ window.setInterval(getTime, 1000);
 
 
 /*
-console.log(currentlyDate.getDay()); //considera a domingo como 0, lunes 1, etc
-console.log(currentlyDate.getMonth()); //considera a enero como 0, feb 1, etc por ser un arreglo
-console.log(currentlyDate.getFullYear());
+console.log(currentDate.getDay()); //considera a domingo como 0, lunes 1, etc
+console.log(currentDate.getMonth()); //considera a enero como 0, feb 1, etc por ser un arreglo
+console.log(currentDate.getFullYear());
 */
