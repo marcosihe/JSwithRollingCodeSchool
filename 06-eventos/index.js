@@ -26,3 +26,12 @@ validateNumber = (number) => {
         number.className = 'form-control is-invalid';
     }
 }
+
+//validar consulta
+validateConsult = text => {
+    if (text.value.trim() != '' && text.value.length >= 10) {
+        text.className = 'form-control is-valid';
+    }else{
+        text.className = 'form-control is-invalid';
+    }
+}
