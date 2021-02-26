@@ -65,12 +65,16 @@ let sendEmail = () => {
         phone: document.querySelector('#phone').value 
         }).then(function (response){
             //Esta función se ejecuta cuando se cumplió la promesa
-            console.log(response);
-            alert('Mensaje enviado');
+            let alert = document.querySelector('#alert');
+            alert.className = 'alert alert-success text-center mt-3';
+            alert.innerHTML = '¡Datos enviados exitosamente';
             resetForm();
         }, function (error){
-            console.log(error);
-            alert('Ocurrió un error. Intente más tarde.');
+            //Esta función se ejecuta cuando NO se cumple la promesa
+            let alert = document.querySelector('#alert');
+            alert.className = 'alert alert-danger text-center mt-3';
+            alert.innerHTML = 'Error en el envío de datos. Intente nuevamente más tarde.';
+            resetForm();
         })
 }
 
@@ -83,7 +87,9 @@ generalValidation = e => { //el parámetro e hace referencia al 'event'
     validateTerms()) {
         sendEmail();
     }else{
-        //alert('Datos incorrectos');
+        let alert = document.querySelector('#alert');
+        alert.className = 'alert alert-warning text-center mt-3';
+        alert.innerHTML = 'Debe completar todos los campos';
     }
 }
 
@@ -95,4 +101,10 @@ let resetForm = () => {
     document.querySelector('#consult').className = 'form-control';
     document.querySelector('#terms').className = 'form-check-input'; 
     //En el caso de tener más campos, podría trabajar con un bucle para limpiar los 'hijos' con el concepto de nodos
+}
+
+let clearAlertStyles = () => {
+    let alert = document.querySelector('#alert');
+    alert.className = '';
+    alert.innerHTML = '';
 }

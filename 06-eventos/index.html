@@ -32,7 +32,7 @@
                 <form id='suscriptionForm' onsubmit="generalValidation(event)">
                     <div class="mb-3"> <!--Nombre y Apellido-->
                         <label class="form-label">Nombre y Apellido</label>
-                        <input type="text" class="form-control" id="name" placeholder="Juan Perez" onblur="requiredField(this)" required>
+                        <input type="text" class="form-control" id="name" placeholder="Juan Perez" onfocus="clearAlertStyles(this)" onblur="requiredField(this)" required>
                         <div class="valid-feedback">
                             <p>Ingreso correcto de datos</p>
                         </div>
@@ -42,21 +42,21 @@
                     </div>
                     <div class="mb-3"> <!--E-mail-->
                         <label class="form-label">E-mail</label>
-                        <input type="email" class="form-control" id="email" placeholder="juanperezok@gmail.com" onblur="validateEmail(this)" required>
+                        <input type="email" class="form-control" id="email" placeholder="juanperezok@gmail.com" onfocus="clearAlertStyles(this)" onblur="validateEmail(this)" required>
                         <div class="invalid-feedback">
                             <p>Debe ingresar un e-mail válido</p>
                         </div>
                     </div>
                     <div class="mb-3"><!--Teléfono-->
                         <label class="form-label">Teléfono</label>
-                        <input type="number" class="form-control" id="phone" placeholder="3816703322" onblur="validateNumber(this)">
+                        <input type="number" class="form-control" id="phone" placeholder="3816703322" onfocus="clearAlertStyles(this)" onblur="validateNumber(this)" required>
                         <div class="invalid-feedback">
                             <p>Debe ingresar un número de teléfono</p>
                         </div>
                     </div>
                     <div class="mb-3"><!--Consulta-->
                         <label class="form-label">Consulta</label>
-                        <textarea type="text" class="form-control" id="consult" placeholder="Ingrese su consulta" onblur="validateConsult(this)"></textarea>  
+                        <textarea type="text" class="form-control" id="consult" placeholder="Ingrese su consulta" onfocus="clearAlertStyles(this)" onblur="validateConsult(this)" required></textarea>
                         <div class="invalid-feedback">
                             <p>Debe ingresar una consulta de al menos 10 caracteres</p>
                         </div>
@@ -72,7 +72,11 @@
                         </div>
                     </div>
                     <button class="btn btn-primary" type="submit">Enviar</button>
+                    <div class="mt-1">* Todos los campos son obligatorios.</div>
                 </form>
+                <div id="alert" role="alert">
+                    
+                  </div>
             </div>
         </section>
     </main>
