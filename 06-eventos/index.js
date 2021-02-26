@@ -67,6 +67,7 @@ let sendEmail = () => {
             //Esta función se ejecuta cuando se cumplió la promesa
             console.log(response);
             alert('Mensaje enviado');
+            resetForm();
         }, function (error){
             console.log(error);
             alert('Ocurrió un error. Intente más tarde.');
@@ -87,4 +88,13 @@ generalValidation = e => { //el parámetro e hace referencia al 'event'
     }else{
         //alert('Datos incorrectos');
     }
+}
+
+let resetForm = () => {
+    document.querySelector('#suscriptionForm').reset();
+    document.querySelector('#name').className = 'form-control';
+    document.querySelector('#email').className = 'form-control';
+    document.querySelector('#phone').className = 'form-control';
+    document.querySelector('#consult').className = 'form-control';
+    document.querySelector('#terms').className = 'form-check-input'; 
 }

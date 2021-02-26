@@ -29,7 +29,7 @@
                 <h5>Formulario de suscripción</h5>
             </div>
             <div class="card-body">
-                <form onsubmit="generalValidation(event)">
+                <form id='suscriptionForm' onsubmit="generalValidation(event)">
                     <div class="mb-3"> <!--Nombre y Apellido-->
                         <label class="form-label">Nombre y Apellido</label>
                         <input type="text" class="form-control" id="name" placeholder="Juan Perez" onblur="requiredField(this)" required>
