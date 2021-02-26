@@ -76,14 +76,11 @@ let sendEmail = () => {
 
 generalValidation = e => { //el parámetro e hace referencia al 'event' 
     e.preventDefault();    //en html se usa literalmente la palabra 'event' pues hace referencia al objeto de ese nombre
-    //console.log(e);
     if (requiredField(document.querySelector('#name')) &&
     validateEmail(document.querySelector('#email')) &&
     validateNumber(document.querySelector('#phone')) &&
     validateConsult(document.querySelector('#consult')) &&
     validateTerms()) {
-        //En este punto se debe envia el mail
-        //alert('Datos correctos');
         sendEmail();
     }else{
         //alert('Datos incorrectos');
@@ -97,4 +94,5 @@ let resetForm = () => {
     document.querySelector('#phone').className = 'form-control';
     document.querySelector('#consult').className = 'form-control';
     document.querySelector('#terms').className = 'form-check-input'; 
+    //En el caso de tener más campos, podría trabajar con un bucle para limpiar los 'hijos' con el concepto de nodos
 }
