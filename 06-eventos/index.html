@@ -6,6 +6,12 @@
     <meta name="author" content="Marcos E. Herrera">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+        emailjs.init("user_nC9AZY0jzcM3ENY164iuV");
+        })();
+</script>
     <title>Formulario - Eventos</title>
 </head>
 <body>
@@ -23,10 +29,10 @@
                 <h5>Formulario de suscripción</h5>
             </div>
             <div class="card-body">
-                <form>
-                    <div class="mb-3">
+                <form onsubmit="generalValidation(event)">
+                    <div class="mb-3"> <!--Nombre y Apellido-->
                         <label class="form-label">Nombre y Apellido</label>
-                        <input type="text" class="form-control" id="name" placeholder="Juan Perez" onblur="requiredField(this)">
+                        <input type="text" class="form-control" id="name" placeholder="Juan Perez" onblur="requiredField(this)" required>
                         <div class="valid-feedback">
                             <p>Ingreso correcto de datos</p>
                         </div>
@@ -34,21 +40,21 @@
                             <p>Debe ingregresar nombre y apellido</p>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3"> <!--E-mail-->
                         <label class="form-label">E-mail</label>
-                        <input type="email" class="form-control" id="email" placeholder="juanperezok@gmail.com" onblur="validateEmail(this)">
+                        <input type="email" class="form-control" id="email" placeholder="juanperezok@gmail.com" onblur="validateEmail(this)" required>
                         <div class="invalid-feedback">
                             <p>Debe ingresar un e-mail válido</p>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3"><!--Teléfono-->
                         <label class="form-label">Teléfono</label>
                         <input type="number" class="form-control" id="phone" placeholder="3816703322" onblur="validateNumber(this)">
                         <div class="invalid-feedback">
                             <p>Debe ingresar un número de teléfono</p>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3"><!--Consulta-->
                         <label class="form-label">Consulta</label>
                         <textarea type="text" class="form-control" id="consult" placeholder="Ingrese su consulta" onblur="validateConsult(this)"></textarea>  
                         <div class="invalid-feedback">
@@ -56,12 +62,13 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <div class="form-check">
+                        <div class="form-check"><!--Términos y condiciones-->
                             <input type="checkbox" id="terms" class="form-check-input">
                             <label  class="input-form-check-label">Está de acuerdo con lo términos y condiciones</label>
                             <div class="invalid-feedback">
                                 <p>Debe aceptar los términos y condiciones</p>
                             </div>
+                            <div class="valid-feedback"></div>
                         </div>
                     </div>
                     <button class="btn btn-primary" type="submit">Enviar</button>
