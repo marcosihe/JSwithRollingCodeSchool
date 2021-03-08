@@ -4,6 +4,7 @@ let getTime = () => {
         hours = currentDate.getHours(),
         minutes = currentDate.getMinutes(),
         seconds = currentDate.getSeconds();
+    
 
     //Ahora debo traer los elementos html necesarios
     let paragraphHours = document.querySelector('#hours'),
@@ -14,18 +15,18 @@ let getTime = () => {
         paragraphMonth = document.querySelector('#month'),
         paragraphYear = document.querySelector('#year');
 
-    //ASignar los valores necesarios
+    //Asignar los valores necesarios
     let week = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
         months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
     
     paragraphDayWeek.innerHTML = week[currentDate.getDay()];
     paragraphNumberDay.innerHTML = currentDate.getDate();
-    paragraphMonth.innerHTML = months[currentlyDate.getMonth()];
+    paragraphMonth.innerHTML = months[currentDate.getMonth()];
     paragraphYear.innerHTML = currentDate.getFullYear();
 
     //Asigno los valores para la hora
     if (hours < 10) {
-        hours = '0' + hours;
+        time.hours = '0' + hours;
     }
     if (minutes < 10) {
         minutes = '0' + minutes;
