@@ -1,10 +1,4 @@
 
-import { Funko } from './funkoClass.dev';
-/*
-import { funcionDePrueba } from './validations.dev';
+//import { Funko } from './funkoClass.dev';
+//import { generalValidation } from './validations.dev';
 
-console.log(funcionDePrueba());
-
-
-
-*/

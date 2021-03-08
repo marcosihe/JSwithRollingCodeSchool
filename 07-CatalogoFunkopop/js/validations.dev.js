@@ -1,66 +1,69 @@
+let inputs = {
+    productCode: false,
+    productName: false,
+    category: false,
+    serialNumber: false
+};
 
 //Función para validar cadena de caracteres
-function charValidation(input) {
-    if (input.value.trim() === '') {
-        input.className = 'form-control is-invalid';
-        return false;
+let validateProductName = productName => {
+    if (productName.value.trim() === '') {
+        productName.className = 'form-control is-invalid';
+        inputs.productName = false;
     } else {
-        input.className = 'form-control is-valid';
-        return true;
+        productName.className = 'form-control is-valid';
+        inputs.productName = true;
+    }
+}
+//Product Category validation
+let validateProductCategory = category => {
+    if (category.value.trim() === '') {
+        category.className = 'form-control is-invalid';
+        inputs.category = false;
+    } else {
+        category.className = 'form-control is-valid';
+        inputs.category = true;
     }
 }
 
 //Product code validation
-function validateProductCode(productCode) {
+let validateProductCode = productCode => {
     if (productCode.value.trim() != '' && !isNaN(productCode.value)){
         productCode.className = 'form-control is-valid';
-        return true;
+        inputs.productCode = true;
     }else{
         productCode.className = 'form-control is-invalid';
-        return false;
+        inputs.productCode = false;
     }
 }
-
-//Product name validation
-function validateProductName(productName) {charValidation(productName)}
-
-//Product Category validation
-function validateProductCategory(category) {charValidation(category)}
 
 //Product serial number validation
-function validateProductSerialNumber(serialNumber) {
+let validateProductSerialNumber = serialNumber => {
     if (serialNumber.value.trim() != '' &&!isNaN(serialNumber.value)){
         serialNumber.className = 'form-control is-valid';
-        return true;
+        inputs.serialNumber = true;
     }else{
         serialNumber.className = 'form-control is-invalid';
-        return false;
+        inputs.serialNumber = false;
     }
 }
-
 /*I know its the same validation used on product code, but I'll replace it with a regular expresion
 to validate 'numbers and letters' so thats the reason why I don't want to unify both of them in a
 single function*/
-/*
-export function addFunkopop(e){
+
+function addFunkopop(e){
     e.preventDefault();
     if (
-        validateProductCode(document.querySelector('#productCode')) &&
-        validateProductName(document.querySelector('#productName')) &&
-        validateProductCategory(document.querySelector('#category')) &&
-        validateProductSerialNumber(document.querySelector('#serialNumber'))
-    ) {
+        inputs.productCode &&
+        inputs.serialNumber &&
+        inputs.productName &&
+        inputs.category
+        ) {
+        console.log('estoy en true')
         return true;
     }else{
+        console.log('estoy en false')
         return false;
     }
 }
 
-export function funcionDePrueba() {
-    if (validateProductCode(document.querySelector('#productCode'))) {
-        return true;
-    }else{
-        return false;
-    }
-}
-*/
