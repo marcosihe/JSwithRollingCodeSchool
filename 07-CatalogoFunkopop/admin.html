@@ -37,7 +37,158 @@
             </div>
         </nav>
     </header>
-    <main></main>
+    <main class="container">
+        <section class="row">
+            <div class="col-10">
+              <h1 class="display-3">Administrar productos</h1>
+            </div>
+            <div class="col-2">
+              <img src="img/batmanAdmin.jpg" alt="Funkopop de Batman" class="w-100" />
+            </div>
+            
+          </section>
+        <section>
+            <hr>
+            <div class="row">
+                <div class="col-10">
+                    <h3>Tabla de Funkopop</h3>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-primary" 
+                        id="addButton" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#productModal">
+                        Agregar
+                    </button>
+                </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <th scope="col">Código</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Número de serie</th>
+                      <th scope="col">Categoría</th>
+                      <th>Descripción</th>
+                      <th>Imagen</th>
+                      <th>Opciones</th>
+                    </tr>
+                  </thead>
+                  <tbody id="funkopopTable">
+                    <tr>
+                      <th scope="row">001</th>
+                      <td>Batman</td>
+                      <td>CD2312</td>
+                      <td>DC</td>
+                      <td>Caballero de la noche</td>
+                      <td>Sin imagen</td>
+                      <td>
+                          <button class="btn btn-warning">Editar</button>
+                          <button class="btn btn-danger">Eliminar</button>
+                      </td>
+                    </tr>
+                  </tbody>    
+            </table>
+            </div>
+        </section>
+    </main>
+    <!-- VENTANA MODAL -->
+    <div
+      class="modal fade"
+      id="productModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Agregar Producto</h5>
+            <!-- Botón para cerrar la ventana modal-->
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="funkopopForm" onsubmit="addFunkopop(event)">
+                <div class="mb-3"> <!--Product Code Number-->
+                    <label for="" class="form-label">Código</label>
+                    <input type="text" 
+                    id="productCode" 
+                    class="form-control" 
+                    placeholder="001" 
+                    onblur="validateProductCode(this)">
+                    <div class="valid-feedback"></div>
+                  <div class="invalid-feedback">
+                    Debe ingresar un número válido
+                  </div>
+                </div>
+                <div class="mb-3"> <!--Product Name-->
+                  <label for="" class="form-label">Nombre</label>
+                  <input 
+                  type="text" 
+                  id="productName" 
+                  class="form-control" 
+                  placeholder="Batman" 
+                  onblur="validateProuctName(this)">
+                  <div class="valid-feedback"></div>
+                  <div class="invalid-feedback">
+                    Debe ingresar un nombre válido
+                  </div>
+              </div>
+              <div class="mb-3"> <!--Product Serial Number-->
+                  <label for="" class="form-label">Número de serie</label>
+                  <input 
+                  type="text" 
+                  id="serialNumber" 
+                  class="form-control" 
+                  placeholder="dc3421" 
+                  onblur="validateProductSerialNumber(this)">
+                  <div class="valid-feedback"></div>
+                  <div class="invalid-feedback">
+                    Debe ingresar un número de serie válido
+                  </div>
+              </div>
+              <div class="mb-3"> <!--Product Category-->
+                  <label for="" class="form-label">Categoría</label>
+                  <input 
+                  type="text" 
+                  id="category" 
+                  class="form-control" 
+                  placeholder="DC" 
+                  onblur="validateProductCategory(this)">
+                  <div class="valid-feedback"></div>
+                  <div class="invalid-feedback">
+                    Debe ingresar una categoría válida
+                  </div>
+              </div>
+              <div class="mb-3"> <!--Product Description-->
+                  <label for="" class="form-label">Descripción</label>
+                  <textarea 
+                  id="description" 
+                  rows="3" 
+                  class="form-control" 
+                  placeholder="Caballero de la noche">
+                </textarea>
+              </div>
+              <div class="mb-3"> <!--Product Image-->
+                  <label for="" class="form-label">Imagen</label>
+                  <input type="text" id=image class="form-control" placeholder="Agregar imagen" onblur="validateProductImage(this)">
+              </div>
+              <!-- Botón de guardar-->
+              <button 
+                class="btn btn-primary" 
+                type="submit">
+                Guardar
+              </button>
+            </form>
+          </div>
+      </div>
+    </div>
     <footer class="bg-dark text-light py-4 text-center">
         <div>
             <img src="img/logo-meh-002.svg" alt="Logo de mi nombre - letra M que se puede ver como una letra E si se gira 90 grados" width="30" height="24" class="d-inline-block align-top">   
