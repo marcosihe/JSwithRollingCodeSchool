@@ -9,20 +9,20 @@ let inputs = {
 let validateProductName = productName => {
     if (productName.value.trim() === '') {
         productName.className = 'form-control is-invalid';
-        inputs.productName = false;
+        return false;
     } else {
         productName.className = 'form-control is-valid';
-        inputs.productName = true;
+        return true;
     }
 }
 //Product Category validation
 let validateProductCategory = category => {
     if (category.value.trim() === '') {
         category.className = 'form-control is-invalid';
-        inputs.category = false;
+        return false;
     } else {
         category.className = 'form-control is-valid';
-        inputs.category = true;
+        return true;
     }
 }
 
@@ -30,10 +30,10 @@ let validateProductCategory = category => {
 let validateProductCode = productCode => {
     if (productCode.value.trim() != '' && !isNaN(productCode.value)){
         productCode.className = 'form-control is-valid';
-        inputs.productCode = true;
+        return true;
     }else{
         productCode.className = 'form-control is-invalid';
-        inputs.productCode = false;
+        return false;
     }
 }
 
@@ -41,17 +41,14 @@ let validateProductCode = productCode => {
 let validateProductSerialNumber = serialNumber => {
     if (serialNumber.value.trim() != '' &&!isNaN(serialNumber.value)){
         serialNumber.className = 'form-control is-valid';
-        inputs.serialNumber = true;
+        return true;
     }else{
         serialNumber.className = 'form-control is-invalid';
-        inputs.serialNumber = false;
+        return false;
     }
 }
-/*I know its the same validation used on product code, but I'll replace it with a regular expresion
-to validate 'numbers and letters' so thats the reason why I don't want to unify both of them in a
-single function*/
 
-function addFunkopop(e){
+export function addFunkopop(e){
     e.preventDefault();
     if (
         inputs.productCode &&
@@ -59,11 +56,8 @@ function addFunkopop(e){
         inputs.productName &&
         inputs.category
         ) {
-        console.log('estoy en true')
         return true;
     }else{
-        console.log('estoy en false')
         return false;
     }
 }
-
