@@ -89,6 +89,9 @@ window.addFunkopop = (event) => {
         image);
 
     funkopopList.push(newFunko);
-    console.log(funkopopList);   
+    //console.log(funkopopList);
+
+    //Guardo la lista 'funkopopList' en el local storage
+    localStorage.setItem("funkopopListKey", JSON.stringify(funkopopList));
     }
 }
